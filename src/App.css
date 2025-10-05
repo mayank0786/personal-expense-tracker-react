@@ -1,38 +1,173 @@
-.App {
+/* Import a clean, readable font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Define a color palette using CSS variables for easy changes */
+:root {
+  --primary-color: #4a90e2; /* A nice, modern blue */
+  --primary-hover: #357ABD;
+  --danger-color: #e94b3c;
+  --warning-color: #f5a623;
+  --light-gray: #f7f9fc;
+  --medium-gray: #dfe3e8;
+  --dark-gray: #4a4a4a;
+  --text-color: #333;
+  --white-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 700px;
+  background: var(--white-color);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+h1, h2 {
+  color: var(--dark-gray);
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- Form Styles --- */
+.expense-form {
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Creates nice spacing between form elements */
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Button Styles --- */
+.btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  flex-grow: 1; /* Makes the main button take up more space */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.btn-secondary {
+    background-color: var(--medium-gray);
+    color: var(--dark-gray);
+}
+
+/* --- Expense List Styles --- */
+.expense-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between list items */
+}
+
+.empty-list-message {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.expense-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  background: var(--white-color);
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.expense-item:hover {
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expense-details {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  gap: 15px;
+}
+
+.expense-details .date {
+  font-weight: 500;
+  color: #555;
+}
+
+.expense-details .note {
+  color: #333;
+}
+
+.expense-details .amount {
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.expense-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.btn-edit {
+  background-color: var(--warning-color);
+  color: var(--white-color);
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  color: var(--white-color);
 }
