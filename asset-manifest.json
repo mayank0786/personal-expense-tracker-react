@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mayank0786/personal-expense-tracker-react.git%20/static/css/main.5835f484.css",
+    "main.js": "/mayank0786/personal-expense-tracker-react.git%20/static/js/main.5f311e3d.js",
+    "static/js/453.cd672270.chunk.js": "/mayank0786/personal-expense-tracker-react.git%20/static/js/453.cd672270.chunk.js",
+    "index.html": "/mayank0786/personal-expense-tracker-react.git%20/index.html",
+    "main.5835f484.css.map": "/mayank0786/personal-expense-tracker-react.git%20/static/css/main.5835f484.css.map",
+    "main.5f311e3d.js.map": "/mayank0786/personal-expense-tracker-react.git%20/static/js/main.5f311e3d.js.map",
+    "453.cd672270.chunk.js.map": "/mayank0786/personal-expense-tracker-react.git%20/static/js/453.cd672270.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5835f484.css",
+    "static/js/main.5f311e3d.js"
+  ]
+}
